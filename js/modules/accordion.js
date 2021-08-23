@@ -27,8 +27,8 @@ export default function Accordion(list) {
     }
     return this;
   }
-  return {
+  return Object.freeze({
     init,
     changeInitAcordion,
-  };
+  });
 }

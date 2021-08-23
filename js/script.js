@@ -12,7 +12,6 @@ import initFetchBitcoin from './modules/fetch-bitcoin.js';
 const accordion = Accordion('[data-anime="accordion"] dt');
 accordion.init().changeInitAcordion(0);
 
-initAnimacaoScroll();
 initTabNav();
 initModal();
 initTooltip();
@@ -21,3 +20,4 @@ initMenuMobile();
 initFuncionamento();
 initFetchAnimais();
 initFetchBitcoin();
+initAnimacaoScroll();
