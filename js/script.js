@@ -1,5 +1,5 @@
 import Accordion from "./modules/accordion";
-import initAnimacaoScroll from "./modules/scroll-animacao";
+import animacaoScroll from "./modules/scroll-animacao";
 import tabNav from "./modules/tabnav";
 import Modal from "./modules/modal";
 import Tooltip from "./modules/tooltip";
@@ -28,7 +28,8 @@ initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
 
-initAnimacaoScroll();
+const anima = animacaoScroll('[data-anime="scroll"]');
+anima.init();
 
 fetchAnimais("../../animaisapi.json",'.numeros-grid');
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
