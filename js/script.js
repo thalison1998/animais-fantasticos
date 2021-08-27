@@ -3,7 +3,7 @@ import animacaoScroll from "./modules/scroll-animacao";
 import tabNav from "./modules/tabnav";
 import Modal from "./modules/modal";
 import Tooltip from "./modules/tooltip";
-import initDropdownMenu from "./modules/dropdown-menu";
+import dropdownMenu from "./modules/dropdown-menu";
 import initMenuMobile from "./modules/menu-mobile";
 import initFuncionamento from "./modules/funcionamento";
 import fetchAnimais from "./modules/fetch-animais";
@@ -24,12 +24,13 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]");
 tooltip.init();
 
-initDropdownMenu();
-initMenuMobile();
-initFuncionamento();
-
 const anima = animacaoScroll('[data-anime="scroll"]');
 anima.init();
+const dropMenu = dropdownMenu("[data-dropdown]");
+dropMenu.init();
+
+initMenuMobile();
+initFuncionamento();
 
 fetchAnimais("../../animaisapi.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
