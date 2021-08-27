@@ -17,7 +17,7 @@ tabN.init();
 const modal = new Modal(
   '[data-modal="abrir"]',
   '[data-modal="fechar"]',
-  '[data-modal="container"]',
+  '[data-modal="container"]'
 );
 modal.init();
 
@@ -31,5 +31,5 @@ initFuncionamento();
 const anima = animacaoScroll('[data-anime="scroll"]');
 anima.init();
 
-fetchAnimais("../../animaisapi.json",'.numeros-grid');
+fetchAnimais("../../animaisapi.json", ".numeros-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
