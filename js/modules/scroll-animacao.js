@@ -20,7 +20,7 @@ export default function animacaoScroll(section) {
   // Verifica a distância em cada objeto
   // em relação ao scroll do site
   const checkDistance = () => {
-    console.log('oi')
+    console.log("oi");
     const distanceCheck = getDistance();
 
     distanceCheck.forEach((item) => {
