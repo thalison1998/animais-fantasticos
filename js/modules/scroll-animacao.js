@@ -1,7 +1,7 @@
+import debounce from "../debounce";
 export default function animacaoScroll(section) {
   const sections = document.querySelectorAll(section);
   const windowsMetade = window.innerHeight * 0.5;
-  console.log(windowsMetade);
 
   // Pega a distância de cada item em relação
   // ao topo do site
@@ -20,12 +20,11 @@ export default function animacaoScroll(section) {
   // Verifica a distância em cada objeto
   // em relação ao scroll do site
   const checkDistance = () => {
+    console.log('oi')
     const distanceCheck = getDistance();
 
     distanceCheck.forEach((item) => {
       if (window.pageYOffset > item.offset) {
-        console.log(window.pageYOffset);
-
         item.element.classList.add("ativo");
       } else if (item.element.classList.contains("ativo")) {
         item.element.classList.remove("ativo");
@@ -36,7 +35,8 @@ export default function animacaoScroll(section) {
     if (sections.length) {
       checkDistance();
       getDistance();
-      window.addEventListener("scroll", checkDistance);
+      const eventDebounce = debounce(checkDistance, 50);
+      window.addEventListener("scroll", eventDebounce);
     }
 
     return animacaoScroll();
