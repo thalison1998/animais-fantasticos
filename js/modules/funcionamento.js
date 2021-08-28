@@ -1,4 +1,5 @@
 export default function funcionamento(dia) {
+  debugger
   const funcionamentos = document.querySelector(dia);
   const dataAgora = new Date();
   const diaAgora = dataAgora.getDay();
@@ -14,15 +15,18 @@ export default function funcionamento(dia) {
   const dateAtived = () => {
     const diasSemana = funcionamentos.dataset.semana.split(",").map(Number);
     const horarioSemana = funcionamentos.dataset.horario.split(",").map(Number);
-
-    if (dateCheck(diasSemana, horarioSemana)) {
+    const dateValidation = dateCheck(diasSemana, horarioSemana);
+    return dateValidation;
+  };
+  const valid = () => {
+    if (dateAtived()) {
       funcionamentos.classList.add("aberto");
     }
   };
-
   const init = () => {
     if (funcionamentos) {
       dateAtived();
+      valid();
     }
   };
 
