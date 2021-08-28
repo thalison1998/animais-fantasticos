@@ -1,4 +1,4 @@
-import debounce from "../debounce";
+import debounce from '../debounce';
 export default function animacaoScroll(section) {
   const sections = document.querySelectorAll(section);
   const windowsMetade = window.innerHeight * 0.5;
@@ -24,9 +24,9 @@ export default function animacaoScroll(section) {
 
     distanceCheck.forEach((item) => {
       if (window.pageYOffset > item.offset) {
-        item.element.classList.add("ativo");
-      } else if (item.element.classList.contains("ativo")) {
-        item.element.classList.remove("ativo");
+        item.element.classList.add('ativo');
+      } else if (item.element.classList.contains('ativo')) {
+        item.element.classList.remove('ativo');
       }
     });
   };
@@ -35,7 +35,7 @@ export default function animacaoScroll(section) {
       checkDistance();
       getDistance();
       const eventDebounce = debounce(checkDistance, 50);
-      window.addEventListener("scroll", eventDebounce);
+      window.addEventListener('scroll', eventDebounce);
       return this;
     }
 
@@ -43,7 +43,7 @@ export default function animacaoScroll(section) {
   }
   // Remove o event de scroll
   const stop = () => {
-    window.removeEventListener("scroll", checkDistance);
+    window.removeEventListener('scroll', checkDistance);
   };
 
   return Object.freeze({

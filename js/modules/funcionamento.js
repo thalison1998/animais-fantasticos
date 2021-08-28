@@ -12,10 +12,10 @@ export default function funcionamento(dia) {
   }
 
   function dateAtived() {
-    const diasSemana = funcionamentos.dataset.semana.split(",").map(Number);
-    const horarioSemana = funcionamentos.dataset.horario.split(",").map(Number);
+    const diasSemana = funcionamentos.dataset.semana.split(',').map(Number);
+    const horarioSemana = funcionamentos.dataset.horario.split(',').map(Number);
     if (dateCheck(diasSemana, horarioSemana)) {
-      funcionamentos.classList.add("aberto");
+      funcionamentos.classList.add('aberto');
     }
   }
   function init() {

@@ -9,20 +9,20 @@ export default class Tooltip {
 
   onMouseLeave({ currentTarget }) {
     this.tooltipBox.remove();
-    currentTarget.removeEventListener("mouseleave", this.onMouseLeave);
-    currentTarget.removeEventListener("mousemove", this.onMouseMove);
+    currentTarget.removeEventListener('mouseleave', this.onMouseLeave);
+    currentTarget.removeEventListener('mousemove', this.onMouseMove);
   }
 
   // move a tooltip com base em seus estilos
   // de acordo com a posição do mouse
 
   onMouseMove(e) {
-    this.tooltipBox.style.top = e.pageY + 20 + "px";
+    this.tooltipBox.style.top = e.pageY + 20 + 'px';
 
     if (e.pageX + 240 > window.innerWidth) {
-      this.tooltipBox.style.left = e.pageX - 170 + "px";
+      this.tooltipBox.style.left = e.pageX - 170 + 'px';
     } else {
-      this.tooltipBox.style.left = e.pageX + 20 + "px";
+      this.tooltipBox.style.left = e.pageX + 20 + 'px';
     }
   }
 
@@ -32,15 +32,15 @@ export default class Tooltip {
   onMouseOver({ currentTarget }) {
     // criar tooltipbox e colocar em uma propriedade
     this.criarTooltipBox(currentTarget);
-    currentTarget.addEventListener("mousemove", this.onMouseMove);
-    currentTarget.addEventListener("mouseleave", this.onMouseLeave);
+    currentTarget.addEventListener('mousemove', this.onMouseMove);
+    currentTarget.addEventListener('mouseleave', this.onMouseLeave);
   }
 
   // criar tooltipbox e coloca no body
   criarTooltipBox(element) {
-    const tooltipBox = document.createElement("div");
-    const text = element.getAttribute("aria-label");
-    tooltipBox.classList.add("tooltip");
+    const tooltipBox = document.createElement('div');
+    const text = element.getAttribute('aria-label');
+    tooltipBox.classList.add('tooltip');
     tooltipBox.innerText = text;
     document.body.appendChild(tooltipBox);
     this.tooltipBox = tooltipBox;
@@ -48,7 +48,7 @@ export default class Tooltip {
 
   addTooltipsEvent() {
     this.tooltips.forEach((item) => {
-      item.addEventListener("mouseover", this.onMouseOver);
+      item.addEventListener('mouseover', this.onMouseOver);
     });
   }
 
