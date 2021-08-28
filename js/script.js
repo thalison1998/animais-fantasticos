@@ -14,6 +14,7 @@ accordion.init().changeInitAcordion(0);
 
 const tabN = tabNav('[data-tab="menu"] li', '[data-tab="content"] section');
 tabN.init();
+
 const modal = new Modal(
   '[data-modal="abrir"]',
   '[data-modal="fechar"]',
@@ -32,7 +33,7 @@ dropMenu.init();
 
 const mobileMenu = menuMobile('[data-menu="button"]', '[data-menu="list"]');
 mobileMenu.init();
-
+console.log(mobileMenu)
 const horarioFuncionamento = funcionamento("[data-semana]");
 horarioFuncionamento.init();
 
