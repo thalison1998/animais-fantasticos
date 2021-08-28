@@ -23,8 +23,9 @@ export default function menuMobile(menuBtn, listMenu, events) {
     if (!!menuButton && !!menuList) {
       addMenuMobileEvents();
     }
+    return this;
   }
-  return {
+  return Object.freeze({
     init,
-  };
+  });
 }

@@ -28,8 +28,9 @@ export default function dropdownMenu(menus, events) {
     if (dropdownMenus.length) {
       addDropdownMenuEvent();
     }
+    return this;
   }
-  return {
+  return Object.freeze({
     init,
-  };
+  });
 }
