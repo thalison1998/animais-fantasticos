@@ -260,12 +260,12 @@ body {
 }
 
 [data-anime="accordion"] dt::after {
-  content: '⬎';
+  content: '⇧';
   margin-left: 10px;
 }
 
 [data-anime="accordion"] dt.ativo::after {
-  content: '⬏';
+  content: '⇩';
 }
 
 [data-anime="accordion"] dd.ativo {
