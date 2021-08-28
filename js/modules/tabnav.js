@@ -29,7 +29,7 @@ export default function tabNav(menu, content) {
     }
     return this;
   }
-  return {
+  return Object.freeze({
     init,
-  };
+  });
 }
